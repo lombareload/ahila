@@ -62,10 +62,10 @@ emitter.on('allRead', function(){
         });
 
         for(var i = 1; i < table.outLines; i++){
-            var equals = (sorted[i].points === sorted[i-1].points);
+            var equals = (sorted[i] && sorted[i].points) === (sorted[i-1] && sorted[i-1].points);
             position++;
             if(equals){
-                pairs.push( );
+                pairs.push(pairs[pairs.length - 1]);
             } else {
                 pairs.push(position);
             }
